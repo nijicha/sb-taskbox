@@ -28,6 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -62,9 +63,10 @@
   "devDependencies": {
     "@storybook/addon-actions": "^6.4.0",
     "@storybook/addon-essentials": "^6.4.0",
-    "@storybook/addon-interactions": "^6.4.0",
+    "@storybook/addon-interactions": "^6.4.9",
     "@storybook/addon-links": "^6.4.0",
     "@storybook/addon-storyshots": "^6.4.9",
+    "@storybook/jest": "^0.0.5",
     "@storybook/node-logger": "^6.4.0",
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.4.0",

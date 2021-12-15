@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from "react-redux";
 import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { fireEvent, within } from "@storybook/testing-library";
 
 import { PureInboxScreen } from './index';
 
@@ -38,3 +39,11 @@ export const Error = Template.bind({});
 Error.args = {
   error: 'Something',
 };
+
+export const WithInteractions = Template.bind({})
+WithInteractions.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement)
+  // Simulates pinning the tasks
+  fireEvent.click(canvas.getByLabelText('pinTask-1'))
+  fireEvent.click(canvas.getByLabelText('pinTask-3'))
+}
